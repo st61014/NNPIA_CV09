@@ -8,7 +8,7 @@ interface LoginState {
 
 // Define the initial state using that type
 const initialState: LoginState = {
-    value: false,
+    value: Boolean(localStorage.getItem('login')),
 }
 
 export const loginSlice = createSlice({
@@ -18,6 +18,7 @@ export const loginSlice = createSlice({
     reducers: {
         // Use the PayloadAction type to declare the contents of `action.payload`
         setLogin: (state, action: PayloadAction<boolean>) => {
+            localStorage.setItem('login', 'true');
             state.value = action.payload
         },
     },

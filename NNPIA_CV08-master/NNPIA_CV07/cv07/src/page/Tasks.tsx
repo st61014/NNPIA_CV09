@@ -1,6 +1,7 @@
 import TaskList from "../component/TaskList";
 import {Task} from "../data/init-data";
 import {useEffect, useState} from "react";
+import Header from "../component/ui/Header";
 interface Props{
 
 }
@@ -42,6 +43,7 @@ const Tasks = () => {
         {error && <div className="alert alert-danger">{error}</div>}
         {loading && <div className="alert alert-danger">loading</div>}
         <TaskList tasks={tasks} />
+
     </div>
 };
 

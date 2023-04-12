@@ -20,4 +20,11 @@ public class TaskController {
         var result = taskService.findAll();
         return ResponseEntity.ok(result);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findById(@PathVariable final Long id) throws ResourceNotFoundException{
+        var result = taskService.findById(id);
+
+        return ResponseEntity.ok(result.toDto());
+    }
 }
